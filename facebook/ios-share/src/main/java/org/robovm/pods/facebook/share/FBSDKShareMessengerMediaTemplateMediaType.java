@@ -1,12 +1,12 @@
 /*
  * Copyright (C) 2013-2015 RoboVM AB
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -29,19 +29,19 @@ import org.robovm.rt.bro.annotation.*;
 import org.robovm.rt.bro.ptr.*;
 import org.robovm.apple.foundation.*;
 import org.robovm.apple.uikit.*;
+import org.robovm.apple.coregraphics.*;
+import org.robovm.apple.photos.*;
 import org.robovm.pods.facebook.core.*;
 /*</imports>*/
 
 /*<javadoc>*/
 
 /*</javadoc>*/
-/*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedSIntMarshaler.class)/*</annotations>*/
-public enum /*<name>*/FBSDKShareErrorCode/*</name>*/ implements NSErrorCode {
+/*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedUIntMarshaler.class)/*</annotations>*/
+public enum /*<name>*/FBSDKShareMessengerMediaTemplateMediaType/*</name>*/ implements ValuedEnum {
     /*<values>*/
-    Reserved(200L),
-    OpenGraph(201L),
-    DialogNotAvailable(202L),
-    Unknown(203L);
+    Image(0L),
+    Video(1L);
     /*</values>*/
 
     /*<bind>*/
@@ -51,15 +51,15 @@ public enum /*<name>*/FBSDKShareErrorCode/*</name>*/ implements NSErrorCode {
 
     private final long n;
 
-    private /*<name>*/FBSDKShareErrorCode/*</name>*/(long n) { this.n = n; }
+    private /*<name>*/FBSDKShareMessengerMediaTemplateMediaType/*</name>*/(long n) { this.n = n; }
     public long value() { return n; }
-    public static /*<name>*/FBSDKShareErrorCode/*</name>*/ valueOf(long n) {
-        for (/*<name>*/FBSDKShareErrorCode/*</name>*/ v : values()) {
+    public static /*<name>*/FBSDKShareMessengerMediaTemplateMediaType/*</name>*/ valueOf(long n) {
+        for (/*<name>*/FBSDKShareMessengerMediaTemplateMediaType/*</name>*/ v : values()) {
             if (v.n == n) {
                 return v;
             }
         }
         throw new IllegalArgumentException("No constant with value " + n + " found in " 
-            + /*<name>*/FBSDKShareErrorCode/*</name>*/.class.getName());
+            + /*<name>*/FBSDKShareMessengerMediaTemplateMediaType/*</name>*/.class.getName());
     }
 }
