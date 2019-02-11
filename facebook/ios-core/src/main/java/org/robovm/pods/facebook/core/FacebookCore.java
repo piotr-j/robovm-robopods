@@ -46,7 +46,7 @@ import org.robovm.pods.bolts.*;
     /*</ptr>*/
     /*<bind>*/static { Bro.bind(FacebookCore.class); }/*</bind>*/
     /*<constants>*/
-    public static final String Constant__FBSDK_VERSION_STRING = "4.39.0";
+    public static final String Constant__FBSDK_VERSION_STRING = "4.39.1";
     public static final String Constant__FBSDK_TARGET_PLATFORM_VERSION = "v3.2";
     /*</constants>*/
     /*<constructors>*//*</constructors>*/

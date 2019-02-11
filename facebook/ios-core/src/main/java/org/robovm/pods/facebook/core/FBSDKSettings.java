@@ -52,7 +52,10 @@ import org.robovm.pods.bolts.*;
     protected FBSDKSettings(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
-    
+    @Property(selector = "loggingBehaviors")
+    public static native NSSet<NSString> getLoggingBehaviors();
+    @Property(selector = "setLoggingBehaviors:")
+    public static native void setLoggingBehaviors(NSSet<NSString> v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

@@ -57,8 +57,6 @@ import org.robovm.apple.coregraphics.*;
     protected native NSObject getResult0();
     @Property(selector = "error")
     public native NSError getError();
-    @Property(selector = "exception")
-    public native NSException getException();
     @Property(selector = "isCancelled")
     public native boolean isCancelled();
     @Property(selector = "isFaulted")
@@ -121,8 +119,6 @@ import org.robovm.apple.coregraphics.*;
     protected static native <T> BFTask<T> createForResult(NSObject result);
     @Method(selector = "taskWithError:")
     protected static native <T> BFTask<T> createForError(NSError error);
-    @Method(selector = "taskWithException:")
-    protected static native <T> BFTask<T> createForException(NSException exception);
     @Method(selector = "cancelledTask")
     public static native <T> BFTask<T> createCancelled();
     @Method(selector = "taskForCompletionOfAllTasks:")

@@ -52,10 +52,5 @@ import org.robovm.apple.coregraphics.*;
     public static native @MachineSizedSInt long Value__kBFMultipleErrorsError();
     @GlobalValue(symbol="BFTaskMultipleErrorsUserInfoKey", optional=true)
     public static native String Value__BFTaskMultipleErrorsUserInfoKey();
-    
-    @Bridge(symbol="BFTaskCatchesExceptions", optional=true)
-    public static native boolean function__BFTaskCatchesExceptions();
-    @Bridge(symbol="BFTaskSetCatchesExceptions", optional=true)
-    public static native void function__BFTaskSetCatchesExceptions(boolean catchExceptions);
     /*</methods>*/
 }
