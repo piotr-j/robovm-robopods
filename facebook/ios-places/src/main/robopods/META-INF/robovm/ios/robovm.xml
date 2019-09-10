@@ -1,0 +1,15 @@
+<config>
+    <frameworks>
+        <framework>FBSDKPlacesKit</framework>
+
+        <framework>AVFoundation</framework>
+        <framework>CoreGraphics</framework>
+        <framework>CoreMedia</framework>
+        <framework>CoreMotion</framework>
+        <framework>StoreKit</framework>
+    </frameworks>
+    <exportedSymbols>
+        <symbol>FB*</symbol>
+        <symbol>kFB*</symbol>
+    </exportedSymbols>
+</config>

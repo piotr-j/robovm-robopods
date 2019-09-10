@@ -63,6 +63,10 @@ import org.robovm.apple.dispatch.*;
     public native UIColor getForegroundColor();
     @Property(selector = "setForegroundColor:")
     public native void setForegroundColor(UIColor v);
+    @Property(selector = "useSingleIcon")
+    public native boolean isUseSingleIcon();
+    @Property(selector = "setUseSingleIcon:")
+    public native void setUseSingleIcon(boolean v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/

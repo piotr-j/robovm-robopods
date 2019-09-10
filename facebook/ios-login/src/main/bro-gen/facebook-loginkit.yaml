@@ -11,7 +11,8 @@ enums:
     FBSDKLoginButtonTooltipBehavior: {}
     FBSDKLoginErrorCode: {suffix: ErrorCode}
     FBSDKDefaultAudience: {}
-    FBSDKLoginBehavior: {}
+    # deprecated
+    FBSDKLoginBehavior: {exclude: true}
     FBSDKTooltipViewArrowDirection: {}
     FBSDKTooltipColorStyle: {}
     FBSDKLoginError: {nserror: true}
@@ -31,19 +32,12 @@ classes:
                 type: List<String>
                 marshaler: NSArray.AsStringListMarshaler
     FBSDKLoginManager: # DONE
+        properties:
+            'loginBehavior':
+                exclude: true
         methods:
-            '-logInWithReadPermissions:handler:':
-                exclude: true # deprecated
-            '-logInWithReadPermissions:fromViewController:handler:':
-                trim_after_first_colon: true
-                parameters:
-                    permissions:
-                        type: List<String>
-                        marshaler: NSArray.AsStringListMarshaler
-            '-logInWithPublishPermissions:handler:':
-                exclude: true # deprecated
-            '-logInWithPublishPermissions:fromViewController:handler:':
-                trim_after_first_colon: true
+            '-logInWithPermissions:fromViewController:handler:':
+                name: logIn
                 parameters:
                     permissions:
                         type: List<String>

@@ -51,6 +51,8 @@ import org.robovm.apple.dispatch.*;
     protected FBAdView(SkipInit skipInit) { super(skipInit); }
     @Method(selector = "initWithPlacementID:adSize:rootViewController:")
     public FBAdView(String placementID, @ByVal FBAdSize adSize, UIViewController rootViewController) { super((SkipInit) null); initObject(init(placementID, adSize, rootViewController)); }
+    @Method(selector = "initWithPlacementID:bidPayload:rootViewController:error:")
+    public FBAdView(String placementID, String bidPayload, UIViewController rootViewController, NSError.NSErrorPtr error) { super((SkipInit) null); initObject(init(placementID, bidPayload, rootViewController, error)); }
     @Method(selector = "initWithFrame:")
     public FBAdView(@ByVal CGRect frame) { super(frame); }
     @Method(selector = "initWithCoder:")
@@ -76,10 +78,13 @@ import org.robovm.apple.dispatch.*;
     /*<methods>*/
     @Method(selector = "initWithPlacementID:adSize:rootViewController:")
     protected native @Pointer long init(String placementID, @ByVal FBAdSize adSize, UIViewController rootViewController);
+    @Method(selector = "initWithPlacementID:bidPayload:rootViewController:error:")
+    protected native @Pointer long init(String placementID, String bidPayload, UIViewController rootViewController, NSError.NSErrorPtr error);
     @Method(selector = "loadAd")
     public native void loadAd();
     @Method(selector = "loadAdWithBidPayload:")
     public native void loadAd(String bidPayload);
+    @Deprecated
     @Method(selector = "disableAutoRefresh")
     public native void disableAutoRefresh();
     /*</methods>*/

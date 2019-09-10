@@ -61,6 +61,14 @@ import org.robovm.apple.dispatch.*;
     public native UIColor getTitleColor();
     @Property(selector = "setTitleColor:")
     public native void setTitleColor(UIColor v);
+    @Property(selector = "advertiserNameColor")
+    public native UIColor getAdvertiserNameColor();
+    @Property(selector = "setAdvertiserNameColor:")
+    public native void setAdvertiserNameColor(UIColor v);
+    @Property(selector = "adChoicesForegroundColor")
+    public native UIColor getAdChoicesForegroundColor();
+    @Property(selector = "setAdChoicesForegroundColor:")
+    public native void setAdChoicesForegroundColor(UIColor v);
     @Property(selector = "titleFont")
     public native UIFont getTitleFont();
     @Property(selector = "setTitleFont:")
@@ -89,8 +97,16 @@ import org.robovm.apple.dispatch.*;
     public native UIColor getButtonBorderColor();
     @Property(selector = "setButtonBorderColor:")
     public native void setButtonBorderColor(UIColor v);
+    /**
+     * @deprecated This attribute is no longer used.
+     */
+    @Deprecated
     @Property(selector = "isAutoplayEnabled")
     public native boolean isAutoplayEnabled();
+    /**
+     * @deprecated This attribute is no longer used.
+     */
+    @Deprecated
     @Property(selector = "setAutoplayEnabled:")
     public native void setAutoplayEnabled(boolean v);
     /*</properties>*/

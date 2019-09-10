@@ -22,7 +22,8 @@ enums:
     FBSDKGraphRequestError: {}
     FBSDKAppLinkNavigationType: {}
     FBSDKIncludeStatusBarInSize: {}
-        
+    FBSDKCoreError: {prefix: FBSDKError}
+
 classes:
     FBSDKAccessToken: # DONE
         properties:
@@ -43,6 +44,8 @@ classes:
                         type: Set<String>
                         marshaler: NSSet.AsStringSetMarshaler
             '-initWithTokenString:permissions:declinedPermissions:appID:userID:expirationDate:refreshDate:dataAccessExpirationDate:':
+                name: init
+            '-initWithTokenString:permissions:declinedPermissions:expiredPermissions:appID:userID:expirationDate:refreshDate:dataAccessExpirationDate:':
                 name: init
             '-hasGranted:':
                 trim_after_first_colon: true
@@ -83,6 +86,8 @@ classes:
                 name: setUserData
             '+updateUserProperties:handler:':
                 name: updateUserProperties
+            '+setUserData:forType:':
+                name: setUserData
     FBSDKApplicationDelegate: # DONE
         methods:
             '-application:openURL:sourceApplication:annotation:':

@@ -66,6 +66,10 @@ import org.robovm.apple.dispatch.*;
     public native void registerView(UIView view, FBMediaView iconView, UIViewController viewController);
     @Method(selector = "registerViewForInteraction:iconView:viewController:clickableViews:")
     public native void registerView(UIView view, FBMediaView iconView, UIViewController viewController, NSArray<UIView> clickableViews);
+    @Method(selector = "registerViewForInteraction:iconImageView:viewController:")
+    public native void registerView(UIView view, UIImageView iconImageView, UIViewController viewController);
+    @Method(selector = "registerViewForInteraction:iconImageView:viewController:clickableViews:")
+    public native void registerView(UIView view, UIImageView iconImageView, UIViewController viewController, NSArray<UIView> clickableViews);
     @Method(selector = "downloadMedia")
     public native void downloadMedia();
     /*</methods>*/

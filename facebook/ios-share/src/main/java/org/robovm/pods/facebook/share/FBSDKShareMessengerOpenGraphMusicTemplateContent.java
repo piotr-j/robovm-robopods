@@ -94,8 +94,6 @@ import org.robovm.pods.facebook.core.*;
     /*<methods>*/
     @Method(selector = "addParameters:bridgeOptions:")
     public native NSDictionary<NSString, ?> addParameters(NSDictionary<NSString, ?> existingParameters, FBSDKShareBridgeOptions bridgeOptions);
-    @Method(selector = "addToParameters:bridgeOptions:")
-    public native void addToParameters(NSMutableDictionary<NSString, ?> parameters, FBSDKShareBridgeOptions bridgeOptions);
     @Method(selector = "validateWithOptions:error:")
     public native boolean validate(FBSDKShareBridgeOptions bridgeOptions, NSError.NSErrorPtr errorRef);
     @Method(selector = "encodeWithCoder:")

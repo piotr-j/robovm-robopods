@@ -47,12 +47,23 @@ import org.robovm.pods.bolts.*;
     /*<bind>*/static { ObjCRuntime.bind(FBSDKAppEvents.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public FBSDKAppEvents() {}
+    protected FBSDKAppEvents() {}
     protected FBSDKAppEvents(Handle h, long handle) { super(h, handle); }
     protected FBSDKAppEvents(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
-    
+    @Property(selector = "flushBehavior")
+    public static native FBSDKAppEventsFlushBehavior getFlushBehavior();
+    @Property(selector = "setFlushBehavior:")
+    public static native void setFlushBehavior(FBSDKAppEventsFlushBehavior v);
+    @Property(selector = "loggingOverrideAppID")
+    public static native String getLoggingOverrideAppID();
+    @Property(selector = "setLoggingOverrideAppID:")
+    public static native void setLoggingOverrideAppID(String v);
+    @Property(selector = "userID")
+    public static native String getUserID();
+    @Property(selector = "setUserID:")
+    public static native void setUserID(String v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -82,41 +93,31 @@ import org.robovm.pods.bolts.*;
     @Method(selector = "logPushNotificationOpen:action:")
     public static native void logPushNotificationOpen(UIRemoteNotification payload, String action);
     @Method(selector = "logProductItem:availability:condition:description:imageLink:link:title:priceAmount:currency:gtin:mpn:brand:parameters:")
-    public static native void logProductItem(String itemID, FBSDKProductAvailability availability, FBSDKProductCondition condition, String description, String imageLink, String link, String title, double priceAmount, String currency, String gtin, String mpn, String brand, NSDictionary<?, ?> parameters);
+    public static native void logProductItem(String itemID, FBSDKProductAvailability availability, FBSDKProductCondition condition, String description, String imageLink, String link, String title, double priceAmount, String currency, String gtin, String mpn, String brand, NSDictionary<NSString, ?> parameters);
     @Method(selector = "activateApp")
     public static native void activateApp();
     @Method(selector = "setPushNotificationsDeviceToken:")
     public static native void setPushNotificationsDeviceToken(NSData deviceToken);
     @Method(selector = "setPushNotificationsDeviceTokenString:")
     public static native void setPushNotificationsDeviceTokenString(String deviceTokenString);
-    @Method(selector = "flushBehavior")
-    public static native FBSDKAppEventsFlushBehavior getFlushBehavior();
-    @Method(selector = "setFlushBehavior:")
-    public static native void setFlushBehavior(FBSDKAppEventsFlushBehavior flushBehavior);
-    @Method(selector = "setLoggingOverrideAppID:")
-    public static native void setLoggingOverrideAppID(String appID);
-    @Method(selector = "loggingOverrideAppID")
-    public static native String getLoggingOverrideAppID();
     @Method(selector = "flush")
     public static native void flush();
     @Method(selector = "requestForCustomAudienceThirdPartyIDWithAccessToken:")
     public static native FBSDKGraphRequest requestForCustomAudienceThirdPartyID(FBSDKAccessToken accessToken);
-    @Method(selector = "setUserID:")
-    public static native void setUserID(String userID);
     @Method(selector = "clearUserID")
     public static native void clearUserID();
-    @Method(selector = "userID")
-    public static native String userID();
-    @Method(selector = "setUserData:")
-    public static native void setUserData(NSDictionary<?, ?> userData);
     @Method(selector = "setUserEmail:firstName:lastName:phone:dateOfBirth:gender:city:state:zip:country:")
     public static native void setUserData(String email, String firstName, String lastName, String phone, String dateOfBirth, String gender, String city, String state, String zip, String country);
     @Method(selector = "getUserData")
     public static native String getUserData();
     @Method(selector = "clearUserData")
     public static native void clearUserData();
+    @Method(selector = "setUserData:forType:")
+    public static native void setUserData(String data, String type);
+    @Method(selector = "clearUserDataForType:")
+    public static native void clearUserDataForType(String type);
     @Method(selector = "updateUserProperties:handler:")
-    public static native void updateUserProperties(NSDictionary<?, ?> properties, @Block VoidBlock3<FBSDKGraphRequestConnection, NSObject, NSError> handler);
+    public static native void updateUserProperties(NSDictionary<NSString, ?> properties, @Block VoidBlock3<FBSDKGraphRequestConnection, NSObject, NSError> handler);
     @Method(selector = "augmentHybridWKWebView:")
     public static native void augmentHybridWKWebView(WKWebView webView);
     @Method(selector = "setIsUnityInit:")

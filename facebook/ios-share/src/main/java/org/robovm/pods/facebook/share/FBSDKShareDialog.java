@@ -76,6 +76,8 @@ import org.robovm.pods.facebook.core.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    @Method(selector = "dialogWithViewController:withContent:delegate:")
+    public static native FBSDKShareDialog dialogWithViewController$withContent$delegate$(UIViewController viewController, FBSDKSharingContent content, FBSDKSharingDelegate delegate);
     @Method(selector = "showFromViewController:withContent:delegate:")
     private static native FBSDKShareDialog show0(UIViewController viewController, FBSDKSharingContent content, FBSDKSharingDelegate delegate);
     @Method(selector = "show")

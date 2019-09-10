@@ -51,7 +51,7 @@ import org.robovm.pods.facebook.core.*;
     /*</properties>*/
     /*<methods>*/
     @Method(selector = "gameRequestDialog:didCompleteWithResults:")
-    void didComplete(FBSDKGameRequestDialog gameRequestDialog, NSDictionary<?, ?> results);
+    void didComplete(FBSDKGameRequestDialog gameRequestDialog, NSDictionary<NSString, ?> results);
     @Method(selector = "gameRequestDialog:didFailWithError:")
     void didFail(FBSDKGameRequestDialog gameRequestDialog, NSError error);
     @Method(selector = "gameRequestDialogDidCancel:")

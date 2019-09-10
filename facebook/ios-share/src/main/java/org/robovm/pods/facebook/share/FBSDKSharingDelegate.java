@@ -51,7 +51,7 @@ import org.robovm.pods.facebook.core.*;
     /*</properties>*/
     /*<methods>*/
     @Method(selector = "sharer:didCompleteWithResults:")
-    void didComplete(FBSDKSharing sharer, NSDictionary<?, ?> results);
+    void didComplete(FBSDKSharing sharer, NSDictionary<NSString, ?> results);
     @Method(selector = "sharer:didFailWithError:")
     void didFail(FBSDKSharing sharer, NSError error);
     @Method(selector = "sharerDidCancel:")

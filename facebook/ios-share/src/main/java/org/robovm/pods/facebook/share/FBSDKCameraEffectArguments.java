@@ -62,6 +62,6 @@ import org.robovm.pods.facebook.core.*;
     @Method(selector = "setArray:forKey:")
     public native void set(NSArray<NSString> array, String key);
     @Method(selector = "arrayForKey:")
-    public native NSArray<?> arrayForKey(String key);
+    public native NSArray<NSString> arrayForKey(String key);
     /*</methods>*/
 }

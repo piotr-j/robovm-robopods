@@ -41,7 +41,8 @@ import org.robovm.apple.dispatch.*;
 public enum /*<name>*/FBNativeAdViewType/*</name>*/ implements ValuedEnum {
     /*<values>*/
     GenericHeight300(3L),
-    GenericHeight400(4L);
+    GenericHeight400(4L),
+    Dynamic(6L);
     /*</values>*/
 
     /*<bind>*/

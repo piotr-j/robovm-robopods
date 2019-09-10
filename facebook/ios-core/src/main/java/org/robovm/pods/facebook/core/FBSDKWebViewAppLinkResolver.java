@@ -52,12 +52,11 @@ import org.robovm.pods.bolts.*;
     protected FBSDKWebViewAppLinkResolver(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
-    
+    @Property(selector = "sharedInstance")
+    public static native FBSDKWebViewAppLinkResolver getSharedInstance();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "sharedInstance")
-    public static native FBSDKWebViewAppLinkResolver sharedInstance();
     @Method(selector = "appLinkFromURL:handler:")
     public native void getAppLinkFromURL(NSURL url, @Block VoidBlock2<FBSDKAppLink, NSError> handler);
     /*</methods>*/

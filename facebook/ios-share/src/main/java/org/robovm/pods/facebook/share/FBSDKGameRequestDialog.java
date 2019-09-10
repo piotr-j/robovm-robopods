@@ -59,7 +59,7 @@ import org.robovm.pods.facebook.core.*;
     public native FBSDKGameRequestContent getContent();
     @Property(selector = "setContent:")
     public native void setContent(FBSDKGameRequestContent v);
-    @Property(selector = "frictionlessRequestsEnabled")
+    @Property(selector = "isFrictionlessRequestsEnabled")
     public native boolean isFrictionlessRequestsEnabled();
     @Property(selector = "setFrictionlessRequestsEnabled:")
     public native void setFrictionlessRequestsEnabled(boolean v);
@@ -67,14 +67,6 @@ import org.robovm.pods.facebook.core.*;
     public native boolean canShow();
     /*</properties>*/
     /*<members>*//*</members>*/
-    
-    private static FBSDKGameRequestDialogDelegate delegate;
-    
-    public static FBSDKGameRequestDialog show(FBSDKGameRequestContent content, FBSDKGameRequestDialogDelegate delegate) {
-        FBSDKGameRequestDialog.delegate = delegate;
-        return show0(content, delegate);
-    }
-    
     /*<methods>*/
     @Method(selector = "show")
     public native boolean show();
@@ -86,6 +78,8 @@ import org.robovm.pods.facebook.core.*;
     }
     @Method(selector = "validateWithError:")
     private native boolean validate(NSError.NSErrorPtr errorRef);
+    @Method(selector = "dialogWithContent:delegate:")
+    public static native FBSDKGameRequestDialog dialogWithContent$delegate$(FBSDKGameRequestContent content, FBSDKGameRequestDialogDelegate delegate);
     @Method(selector = "showWithContent:delegate:")
     private static native FBSDKGameRequestDialog show0(FBSDKGameRequestContent content, FBSDKGameRequestDialogDelegate delegate);
     /*</methods>*/

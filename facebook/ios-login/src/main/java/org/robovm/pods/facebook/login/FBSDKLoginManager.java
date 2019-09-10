@@ -59,28 +59,14 @@ import org.robovm.pods.facebook.core.*;
     public native FBSDKDefaultAudience getDefaultAudience();
     @Property(selector = "setDefaultAudience:")
     public native void setDefaultAudience(FBSDKDefaultAudience v);
-    @Property(selector = "loginBehavior")
-    public native FBSDKLoginBehavior getLoginBehavior();
-    @Property(selector = "setLoginBehavior:")
-    public native void setLoginBehavior(FBSDKLoginBehavior v);
     /*</properties>*/
     /*<members>*//*</members>*/
-    public void logInWithReadPermissions(List<String> permissions, VoidBlock2<FBSDKLoginManagerLoginResult, NSError> handler) {
-        logInWithReadPermissions(permissions, null, handler);
-    }
-    public void logInWithPublishPermissions(List<String> permissions, VoidBlock2<FBSDKLoginManagerLoginResult, NSError> handler) {
-        logInWithPublishPermissions(permissions, null, handler);
-    }
     /*<methods>*/
-    @Method(selector = "logInWithReadPermissions:fromViewController:handler:")
-    public native void logInWithReadPermissions(@org.robovm.rt.bro.annotation.Marshaler(NSArray.AsStringListMarshaler.class) List<String> permissions, UIViewController fromViewController, @Block VoidBlock2<FBSDKLoginManagerLoginResult, NSError> handler);
-    @Method(selector = "logInWithPublishPermissions:fromViewController:handler:")
-    public native void logInWithPublishPermissions(@org.robovm.rt.bro.annotation.Marshaler(NSArray.AsStringListMarshaler.class) List<String> permissions, UIViewController fromViewController, @Block VoidBlock2<FBSDKLoginManagerLoginResult, NSError> handler);
+    @Method(selector = "logInWithPermissions:fromViewController:handler:")
+    public native void logIn(@org.robovm.rt.bro.annotation.Marshaler(NSArray.AsStringListMarshaler.class) List<String> permissions, UIViewController fromViewController, @Block VoidBlock2<FBSDKLoginManagerLoginResult, NSError> handler);
     @Method(selector = "reauthorizeDataAccess:handler:")
     public native void reauthorizeDataAccess(UIViewController fromViewController, @Block VoidBlock2<FBSDKLoginManagerLoginResult, NSError> handler);
     @Method(selector = "logOut")
     public native void logOut();
-    @Method(selector = "renewSystemCredentials:")
-    public static native void renewSystemCredentials(@Block VoidBlock2<ACAccountCredentialRenewResult, NSError> handler);
     /*</methods>*/
 }

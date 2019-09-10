@@ -13,10 +13,12 @@ enums:
     FBNativeAdsCachePolicy: {}
     FBNativeAdViewType: {}
     FBNativeAdViewTag: {}
-    FBMediaViewRenderingMethod: {}
+    FBMediaViewRenderingMethod: {exclude: true}
     FBAdTestAdType: {}
     FBAdFormatType: {}
     FBNativeBannerAdViewType: {}
+    FBAdFormatTypeName: {}
+
 
 classes:
     FBAdChoicesView: # DONE
@@ -48,6 +50,8 @@ classes:
     FBAdView: # DONE
         methods:
             '-initWithPlacementID:adSize:rootViewController:':
+                name: init
+            '-initWithPlacementID:bidPayload:rootViewController:error:':
                 name: init
             '-loadAdWithBidPayload:':
                 name: loadAd
@@ -157,7 +161,7 @@ classes:
             '-initWithKeywords:':
                 constructor: true
                 name: init
-    FBAdIconView: {}
+    FBAdIconView: {exclude: true}
     FBAdOptionsView: {}
     FBInstreamAdView:
         skip_def_constructor: true
@@ -181,6 +185,8 @@ classes:
                 name: loadAd
             '-loadAdWithBidPayload:mediaCachePolicy:':
                 name: loadAd
+            '+nativeAdWithPlacementId:bidPayload:error:':
+                name: nativeAd
     FBNativeAdBaseView: {}
     FBNativeBannerAd:
         methods:
@@ -190,6 +196,10 @@ classes:
             '-registerViewForInteraction:iconView:viewController:':
                 name: registerView
             '-registerViewForInteraction:iconView:viewController:clickableViews:':
+                name: registerView
+            '-registerViewForInteraction:iconImageView:viewController:':
+                name: registerView
+            '-registerViewForInteraction:iconImageView:viewController:clickableViews:':
                 name: registerView
     FBNativeBannerAdView:
         methods:
@@ -211,6 +221,16 @@ classes:
                 name: setRewardData
             '-showAdFromRootViewController:animated:':
                 name: showAd
+    FBAdInitResults: {}
+    FBAdInitSettings:
+        methods:
+            '-initWithPlacementIDs:mediationService:':
+                name: init
+    FBAudienceNetworkAds:
+        methods:
+            '+initializeWithSettings:completionHandler:':
+                name: init
+
 
 protocols:
     FBAdViewDelegate: # DONE

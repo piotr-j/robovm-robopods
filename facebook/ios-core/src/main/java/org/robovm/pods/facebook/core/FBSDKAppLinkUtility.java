@@ -47,7 +47,7 @@ import org.robovm.pods.bolts.*;
     /*<bind>*/static { ObjCRuntime.bind(FBSDKAppLinkUtility.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public FBSDKAppLinkUtility() {}
+    protected FBSDKAppLinkUtility() {}
     protected FBSDKAppLinkUtility(Handle h, long handle) { super(h, handle); }
     protected FBSDKAppLinkUtility(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
@@ -58,8 +58,6 @@ import org.robovm.pods.bolts.*;
     /*<methods>*/
     @Method(selector = "fetchDeferredAppLink:")
     public static native void fetchDeferredAppLink(@Block VoidBlock2<NSURL, NSError> handler);
-    @Method(selector = "fetchDeferredAppInvite:")
-    public static native boolean fetchDeferredAppInvite(@Block VoidBlock1<NSURL> handler);
     @Method(selector = "appInvitePromotionCodeFromURL:")
     public static native String getAppInvitePromotionCodeFromURL(NSURL url);
     /*</methods>*/

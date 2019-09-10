@@ -47,33 +47,34 @@ import org.robovm.pods.facebook.core.*;
     /*</bind>*/
     /*<constants>*//*</constants>*/
     /*<properties>*/
-    
+    @Property(selector = "allProperties")
+    NSDictionary<NSString, ?> getAllProperties();
+    @Property(selector = "keyEnumerator")
+    NSEnumerator<?> getKeyEnumerator();
+    @Property(selector = "objectEnumerator")
+    NSEnumerator<?> getObjectEnumerator();
     /*</properties>*/
     /*<methods>*/
     @Method(selector = "arrayForKey:")
     NSArray<?> getArray(String key);
     @Method(selector = "enumerateKeysAndObjectsUsingBlock:")
     void enumerateKeysAndObjects(@Block VoidBlock3<NSString, NSObject, BooleanPtr> block);
-    @Method(selector = "keyEnumerator")
-    NSEnumerator<NSString> getKeyEnumerator();
     @Method(selector = "numberForKey:")
     NSNumber getNumber(String key);
-    @Method(selector = "objectEnumerator")
-    NSEnumerator<?> getObjectEnumerator();
+    @Method(selector = "stringForKey:")
+    String getString(String key);
+    @Method(selector = "URLForKey:")
+    NSURL getURL(String key);
     @Method(selector = "objectForKey:")
     FBSDKShareOpenGraphObject getGraphObject(String key);
     @Method(selector = "objectForKeyedSubscript:")
     NSObject getObject(String key);
     @Method(selector = "parseProperties:")
-    void parseProperties(NSDictionary<?, ?> properties);
+    void parseProperties(NSDictionary<NSString, ?> properties);
     @Method(selector = "photoForKey:")
     FBSDKSharePhoto getPhoto(String key);
     @Method(selector = "removeObjectForKey:")
     void removeObject(String key);
-    @Method(selector = "stringForKey:")
-    String getString(String key);
-    @Method(selector = "URLForKey:")
-    NSURL getURL(String key);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

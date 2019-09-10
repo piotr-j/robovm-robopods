@@ -77,8 +77,6 @@ import org.robovm.pods.facebook.core.*;
     /*<methods>*/
     @Method(selector = "addParameters:bridgeOptions:")
     NSDictionary<NSString, ?> addParameters(NSDictionary<NSString, ?> existingParameters, FBSDKShareBridgeOptions bridgeOptions);
-    @Method(selector = "addToParameters:bridgeOptions:")
-    void addToParameters(NSMutableDictionary<NSString, ?> parameters, FBSDKShareBridgeOptions bridgeOptions);
     /*</methods>*/
     /*<adapter>*/
     /*</adapter>*/

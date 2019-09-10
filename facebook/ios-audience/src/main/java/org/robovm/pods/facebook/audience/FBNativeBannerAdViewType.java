@@ -42,7 +42,7 @@ public enum /*<name>*/FBNativeBannerAdViewType/*</name>*/ implements ValuedEnum 
     /*<values>*/
     GenericHeight100(1L),
     GenericHeight120(2L),
-    GenericHeight50(3L);
+    GenericHeight50(5L);
     /*</values>*/
 
     /*<bind>*/

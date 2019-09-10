@@ -53,7 +53,7 @@ import org.robovm.pods.facebook.core.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @NotImplemented("sharer:didCompleteWithResults:")
-    public void didComplete(FBSDKSharing sharer, NSDictionary<?, ?> results) {}
+    public void didComplete(FBSDKSharing sharer, NSDictionary<NSString, ?> results) {}
     @NotImplemented("sharer:didFailWithError:")
     public void didFail(FBSDKSharing sharer, NSError error) {}
     @NotImplemented("sharerDidCancel:")

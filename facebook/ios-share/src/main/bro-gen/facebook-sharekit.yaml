@@ -66,6 +66,9 @@ classes:
             '+showWithContent:delegate:':
                 name: show0
                 visibility: private
+            '+dialogWithContent:delegate:':
+                #trim_after_first_colon: true
+                name: dialogWithContent$delegate$
     FBSDKHashtag: # DONE
         methods:
             '-isEqualToHashtag:':
@@ -81,6 +84,9 @@ classes:
             '+showWithContent:delegate:':
                 name: show0
                 visibility: private
+            '+dialogWithContent:delegate:':
+                #trim_after_first_colon: true
+                name: dialogWithContent$delegate$
     FBSDKSendButton:
         extends: FBSDKButton
     FBSDKShareAPI: # DONE
@@ -93,6 +99,9 @@ classes:
             '+shareWithContent:delegate:':
                 name: share0
                 visibility: private
+            '+apiWithContent:delegate:':
+                #trim_after_first_colon: true
+                name: apiWithContent$delegate$
     FBSDKShareButton:
         extends: FBSDKButton
     FBSDKShareDialog: # DONE
@@ -100,6 +109,9 @@ classes:
             '+showFromViewController:withContent:delegate:':
                 name: show0
                 visibility: private
+            '+dialogWithViewController:withContent:delegate:':
+                #trim_after_first_colon: true
+                name: dialogWithViewController$withContent$delegate$
     FBSDKShareLinkContent: # DONE
         methods:
             '-isEqualToShareLinkContent:':
@@ -110,15 +122,15 @@ classes:
                 name: equalsTo
     FBSDKShareOpenGraphAction: # DONE
         methods:
+            '-initWithActionType:':
+                name: init
             '-isEqualToShareOpenGraphAction:':
                 name: equalsTo
             '+actionWithType:.*':
                 name: create
                 constructor: true
     FBSDKShareOpenGraphContent: # DONE
-        methods:
-            '-isEqualToShareOpenGraphContent:':
-                name: equalsTo
+        exclude: true
     FBSDKShareOpenGraphObject: # DONE
         methods:
             '-isEqualToShareOpenGraphObject:':
@@ -302,6 +314,7 @@ protocols:
         methods:
             '-validateWithOptions:error:':
                 name: validate
+    FBSDKShareMedia: {}
 
 functions:
     NSStringFromFBSDKAppGroupPrivacy:

@@ -47,12 +47,13 @@ import org.robovm.pods.bolts.*;
     /*<bind>*/static { ObjCRuntime.bind(FBSDKApplicationDelegate.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public FBSDKApplicationDelegate() {}
+    protected FBSDKApplicationDelegate() {}
     protected FBSDKApplicationDelegate(Handle h, long handle) { super(h, handle); }
     protected FBSDKApplicationDelegate(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
-    
+    @Property(selector = "sharedInstance")
+    public static native FBSDKApplicationDelegate getSharedInstance();
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -62,7 +63,7 @@ import org.robovm.pods.bolts.*;
     public native boolean openURL(UIApplication application, NSURL url, NSDictionary<NSString, ?> options);
     @Method(selector = "application:didFinishLaunchingWithOptions:")
     public native boolean didFinishLaunching(UIApplication application, UIApplicationLaunchOptions launchOptions);
-    @Method(selector = "sharedInstance")
-    public static native FBSDKApplicationDelegate getSharedInstance();
+    @Method(selector = "initializeSDK:")
+    public static native void initializeSDK(NSDictionary<NSString, ?> launchOptions);
     /*</methods>*/
 }

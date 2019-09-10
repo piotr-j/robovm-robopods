@@ -49,6 +49,8 @@ import org.robovm.apple.dispatch.*;
     public FBNativeAdView() {}
     protected FBNativeAdView(Handle h, long handle) { super(h, handle); }
     protected FBNativeAdView(SkipInit skipInit) { super(skipInit); }
+    public FBNativeAdView(FBNativeAd nativeAd) { super((Handle) null, create(nativeAd)); retain(getHandle()); }
+    public FBNativeAdView(FBNativeAd nativeAd, FBNativeAdViewAttributes attributes) { super((Handle) null, create(nativeAd, attributes)); retain(getHandle()); }
     public FBNativeAdView(FBNativeAd nativeAd, FBNativeAdViewType type) { super((Handle) null, create(nativeAd, type)); retain(getHandle()); }
     public FBNativeAdView(FBNativeAd nativeAd, FBNativeAdViewType type, FBNativeAdViewAttributes attributes) { super((Handle) null, create(nativeAd, type, attributes)); retain(getHandle()); }
     @Method(selector = "initWithFrame:")
@@ -62,6 +64,10 @@ import org.robovm.apple.dispatch.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    @Method(selector = "nativeAdViewWithNativeAd:")
+    protected static native @Pointer long create(FBNativeAd nativeAd);
+    @Method(selector = "nativeAdViewWithNativeAd:withAttributes:")
+    protected static native @Pointer long create(FBNativeAd nativeAd, FBNativeAdViewAttributes attributes);
     @Method(selector = "nativeAdViewWithNativeAd:withType:")
     protected static native @Pointer long create(FBNativeAd nativeAd, FBNativeAdViewType type);
     @Method(selector = "nativeAdViewWithNativeAd:withType:withAttributes:")

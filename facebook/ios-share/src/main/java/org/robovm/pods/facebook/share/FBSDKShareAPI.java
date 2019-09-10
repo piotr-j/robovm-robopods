@@ -84,6 +84,8 @@ import org.robovm.pods.facebook.core.*;
     public native boolean createOpenGraphObject(FBSDKShareOpenGraphObject openGraphObject);
     @Method(selector = "share")
     public native boolean share();
+    @Method(selector = "apiWithContent:delegate:")
+    public static native FBSDKShareAPI apiWithContent$delegate$(FBSDKSharingContent content, FBSDKSharingDelegate delegate);
     @Method(selector = "shareWithContent:delegate:")
     private static native FBSDKShareAPI share0(FBSDKSharingContent content, FBSDKSharingDelegate delegate);
     /*</methods>*/

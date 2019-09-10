@@ -99,6 +99,7 @@ import org.robovm.pods.bolts.*;
     public static final FBSDKAppEventName CompletedRegistration = new FBSDKAppEventName("CompletedRegistration");
     public static final FBSDKAppEventName CompletedTutorial = new FBSDKAppEventName("CompletedTutorial");
     public static final FBSDKAppEventName InitiatedCheckout = new FBSDKAppEventName("InitiatedCheckout");
+    public static final FBSDKAppEventName Purchased = new FBSDKAppEventName("Purchased");
     public static final FBSDKAppEventName Rated = new FBSDKAppEventName("Rated");
     public static final FBSDKAppEventName Searched = new FBSDKAppEventName("Searched");
     public static final FBSDKAppEventName SpentCredits = new FBSDKAppEventName("SpentCredits");
@@ -109,6 +110,11 @@ import org.robovm.pods.bolts.*;
     public static final FBSDKAppEventName Donate = new FBSDKAppEventName("Donate");
     public static final FBSDKAppEventName FindLocation = new FBSDKAppEventName("FindLocation");
     public static final FBSDKAppEventName Schedule = new FBSDKAppEventName("Schedule");
+    /**
+     * @deprecated This attribute is no longer used.
+     */
+    @Deprecated
+    public static final FBSDKAppEventName SubscriptionHeartbeat = new FBSDKAppEventName("SubscriptionHeartbeat");
     public static final FBSDKAppEventName StartTrial = new FBSDKAppEventName("StartTrial");
     public static final FBSDKAppEventName SubmitApplication = new FBSDKAppEventName("SubmitApplication");
     public static final FBSDKAppEventName Subscribe = new FBSDKAppEventName("Subscribe");
@@ -116,7 +122,7 @@ import org.robovm.pods.bolts.*;
     public static final FBSDKAppEventName AdClick = new FBSDKAppEventName("AdClick");
     /*</constants>*/
     
-    private static /*<name>*/FBSDKAppEventName/*</name>*/[] values = new /*<name>*/FBSDKAppEventName/*</name>*/[] {/*<value_list>*/AchievedLevel, AddedPaymentInfo, AddedToCart, AddedToWishlist, CompletedRegistration, CompletedTutorial, InitiatedCheckout, Rated, Searched, SpentCredits, UnlockedAchievement, ViewedContent, Contact, CustomizeProduct, Donate, FindLocation, Schedule, StartTrial, SubmitApplication, Subscribe, AdImpression, AdClick/*</value_list>*/};
+    private static /*<name>*/FBSDKAppEventName/*</name>*/[] values = new /*<name>*/FBSDKAppEventName/*</name>*/[] {/*<value_list>*/AchievedLevel, AddedPaymentInfo, AddedToCart, AddedToWishlist, CompletedRegistration, CompletedTutorial, InitiatedCheckout, Purchased, Rated, Searched, SpentCredits, UnlockedAchievement, ViewedContent, Contact, CustomizeProduct, Donate, FindLocation, Schedule, SubscriptionHeartbeat, StartTrial, SubmitApplication, Subscribe, AdImpression, AdClick/*</value_list>*/};
     
     /*<name>*/FBSDKAppEventName/*</name>*/ (String getterName) {
         super(Values.class, getterName);
@@ -153,6 +159,8 @@ import org.robovm.pods.bolts.*;
         public static native NSString CompletedTutorial();
         @GlobalValue(symbol="FBSDKAppEventNameInitiatedCheckout", optional=true)
         public static native NSString InitiatedCheckout();
+        @GlobalValue(symbol="FBSDKAppEventNamePurchased", optional=true)
+        public static native NSString Purchased();
         @GlobalValue(symbol="FBSDKAppEventNameRated", optional=true)
         public static native NSString Rated();
         @GlobalValue(symbol="FBSDKAppEventNameSearched", optional=true)
@@ -173,6 +181,12 @@ import org.robovm.pods.bolts.*;
         public static native NSString FindLocation();
         @GlobalValue(symbol="FBSDKAppEventNameSchedule", optional=true)
         public static native NSString Schedule();
+        /**
+         * @deprecated This attribute is no longer used.
+         */
+        @Deprecated
+        @GlobalValue(symbol="FBSDKAppEventNameSubscriptionHeartbeat", optional=true)
+        public static native NSString SubscriptionHeartbeat();
         @GlobalValue(symbol="FBSDKAppEventNameStartTrial", optional=true)
         public static native NSString StartTrial();
         @GlobalValue(symbol="FBSDKAppEventNameSubmitApplication", optional=true)

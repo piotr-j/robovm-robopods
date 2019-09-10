@@ -46,7 +46,7 @@ import org.robovm.pods.facebook.core.*;
     /*<bind>*/static { ObjCRuntime.bind(FBSDKShareMessengerMediaTemplateContent.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public FBSDKShareMessengerMediaTemplateContent() {}
+    protected FBSDKShareMessengerMediaTemplateContent() {}
     protected FBSDKShareMessengerMediaTemplateContent(Handle h, long handle) { super(h, handle); }
     protected FBSDKShareMessengerMediaTemplateContent(SkipInit skipInit) { super(skipInit); }
     @Method(selector = "initWithAttachmentID:")
@@ -106,8 +106,6 @@ import org.robovm.pods.facebook.core.*;
     protected native @Pointer long init(NSURL mediaURL);
     @Method(selector = "addParameters:bridgeOptions:")
     public native NSDictionary<NSString, ?> addParameters(NSDictionary<NSString, ?> existingParameters, FBSDKShareBridgeOptions bridgeOptions);
-    @Method(selector = "addToParameters:bridgeOptions:")
-    public native void addToParameters(NSMutableDictionary<NSString, ?> parameters, FBSDKShareBridgeOptions bridgeOptions);
     @Method(selector = "validateWithOptions:error:")
     public native boolean validate(FBSDKShareBridgeOptions bridgeOptions, NSError.NSErrorPtr errorRef);
     @Method(selector = "encodeWithCoder:")

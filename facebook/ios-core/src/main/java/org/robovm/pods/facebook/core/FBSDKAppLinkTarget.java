@@ -47,7 +47,7 @@ import org.robovm.pods.bolts.*;
     /*<bind>*/static { ObjCRuntime.bind(FBSDKAppLinkTarget.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public FBSDKAppLinkTarget() {}
+    protected FBSDKAppLinkTarget() {}
     protected FBSDKAppLinkTarget(Handle h, long handle) { super(h, handle); }
     protected FBSDKAppLinkTarget(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/

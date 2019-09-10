@@ -96,6 +96,10 @@ import org.robovm.apple.dispatch.*;
     public static native void setLogLevel(FBAdLogLevel level);
     @Method(selector = "mediaViewRenderingMethod")
     public static native FBMediaViewRenderingMethod mediaViewRenderingMethod();
+    /**
+     * @deprecated Rendering method is no longer used in Audience Network
+     */
+    @Deprecated
     @Method(selector = "setMediaViewRenderingMethod:")
     public static native void setMediaViewRenderingMethod(FBMediaViewRenderingMethod mediaViewRenderingMethod);
     /*</methods>*/

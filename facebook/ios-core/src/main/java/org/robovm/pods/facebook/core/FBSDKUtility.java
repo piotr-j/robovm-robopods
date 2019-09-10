@@ -57,15 +57,15 @@ import org.robovm.pods.bolts.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @Method(selector = "dictionaryWithQueryString:")
-    public static native NSDictionary<?, ?> parseQueryString(String queryString);
-    public static String createQueryString(NSDictionary<?, ?> dictionary) throws NSErrorException {
+    public static native NSDictionary<NSString, NSString> parseQueryString(String queryString);
+    public static String createQueryString(NSDictionary<NSString, ?> dictionary) throws NSErrorException {
        NSError.NSErrorPtr ptr = new NSError.NSErrorPtr();
        String result = createQueryString(dictionary, ptr);
        if (ptr.get() != null) { throw new NSErrorException(ptr.get()); }
        return result;
     }
     @Method(selector = "queryStringWithDictionary:error:")
-    private static native String createQueryString(NSDictionary<?, ?> dictionary, NSError.NSErrorPtr errorRef);
+    private static native String createQueryString(NSDictionary<NSString, ?> dictionary, NSError.NSErrorPtr errorRef);
     @Method(selector = "URLDecode:")
     public static native String urlDecode(String value);
     @Method(selector = "URLEncode:")

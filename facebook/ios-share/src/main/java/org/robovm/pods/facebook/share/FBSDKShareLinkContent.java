@@ -53,12 +53,6 @@ import org.robovm.pods.facebook.core.*;
     public FBSDKShareLinkContent(NSCoder decoder) { super((SkipInit) null); initObject(init(decoder)); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "contentDescription")
-    public native String getContentDescription();
-    @Property(selector = "contentTitle")
-    public native String getContentTitle();
-    @Property(selector = "imageURL")
-    public native NSURL getImageURL();
     @Property(selector = "quote")
     public native String getQuote();
     @Property(selector = "setQuote:")
@@ -98,8 +92,6 @@ import org.robovm.pods.facebook.core.*;
     public native boolean equalsTo(FBSDKShareLinkContent content);
     @Method(selector = "addParameters:bridgeOptions:")
     public native NSDictionary<NSString, ?> addParameters(NSDictionary<NSString, ?> existingParameters, FBSDKShareBridgeOptions bridgeOptions);
-    @Method(selector = "addToParameters:bridgeOptions:")
-    public native void addToParameters(NSMutableDictionary<NSString, ?> parameters, FBSDKShareBridgeOptions bridgeOptions);
     @Method(selector = "validateWithOptions:error:")
     public native boolean validate(FBSDKShareBridgeOptions bridgeOptions, NSError.NSErrorPtr errorRef);
     @Method(selector = "encodeWithCoder:")

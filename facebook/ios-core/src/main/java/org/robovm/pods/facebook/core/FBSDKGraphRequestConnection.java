@@ -52,6 +52,10 @@ import org.robovm.pods.bolts.*;
     protected FBSDKGraphRequestConnection(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
+    @Property(selector = "defaultConnectionTimeout")
+    public static native double getDefaultConnectionTimeout();
+    @Property(selector = "setDefaultConnectionTimeout:")
+    public static native void setDefaultConnectionTimeout(double v);
     @Property(selector = "delegate")
     public native FBSDKGraphRequestConnectionDelegate getDelegate();
     @Property(selector = "setDelegate:", strongRef = true)
@@ -60,8 +64,12 @@ import org.robovm.pods.bolts.*;
     public native double getTimeout();
     @Property(selector = "setTimeout:")
     public native void setTimeout(double v);
-    @Property(selector = "URLResponse")
-    public native NSHTTPURLResponse getURLResponse();
+    @Property(selector = "urlResponse")
+    public native NSHTTPURLResponse getUrlResponse();
+    @Property(selector = "delegateQueue")
+    public native NSOperationQueue getDelegateQueue();
+    @Property(selector = "setDelegateQueue:")
+    public native void setDelegateQueue(NSOperationQueue v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
@@ -69,23 +77,13 @@ import org.robovm.pods.bolts.*;
     public native void addRequest(FBSDKGraphRequest request, @Block VoidBlock3<FBSDKGraphRequestConnection, NSObject, NSError> handler);
     @Method(selector = "addRequest:batchEntryName:completionHandler:")
     public native void addRequest(FBSDKGraphRequest request, String name, @Block VoidBlock3<FBSDKGraphRequestConnection, NSObject, NSError> handler);
-    @Method(selector = "addRequest:completionHandler:batchEntryName:")
-    public native void addRequest(FBSDKGraphRequest request, @Block VoidBlock3<FBSDKGraphRequestConnection, NSObject, NSError> handler, String name);
     @Method(selector = "addRequest:batchParameters:completionHandler:")
     public native void addRequest(FBSDKGraphRequest request, NSDictionary<NSString, ?> batchParameters, @Block VoidBlock3<FBSDKGraphRequestConnection, NSObject, NSError> handler);
-    @Method(selector = "addRequest:completionHandler:batchParameters:")
-    public native void addRequest(FBSDKGraphRequest request, @Block VoidBlock3<FBSDKGraphRequestConnection, NSObject, NSError> handler, NSDictionary<?, ?> batchParameters);
     @Method(selector = "cancel")
     public native void cancel();
     @Method(selector = "start")
     public native void start();
-    @Method(selector = "setDelegateQueue:")
-    public native void setDelegateQueue(NSOperationQueue queue);
     @Method(selector = "overrideGraphAPIVersion:")
     public native void overrideGraphAPIVersion(String version);
-    @Method(selector = "overrideVersionPartWith:")
-    public native void overrideVersionPart(String version);
-    @Method(selector = "setDefaultConnectionTimeout:")
-    public static native void setDefaultConnectionTimeout(double defaultConnectionTimeout);
     /*</methods>*/
 }

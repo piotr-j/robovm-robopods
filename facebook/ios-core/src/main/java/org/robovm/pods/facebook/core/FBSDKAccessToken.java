@@ -50,20 +50,26 @@ import org.robovm.pods.bolts.*;
     protected FBSDKAccessToken() {}
     protected FBSDKAccessToken(Handle h, long handle) { super(h, handle); }
     protected FBSDKAccessToken(SkipInit skipInit) { super(skipInit); }
-    @Method(selector = "initWithTokenString:permissions:declinedPermissions:appID:userID:expirationDate:refreshDate:")
-    public FBSDKAccessToken(String tokenString, @org.robovm.rt.bro.annotation.Marshaler(NSSet.AsStringSetMarshaler.class) Set<String> permissions, @org.robovm.rt.bro.annotation.Marshaler(NSSet.AsStringSetMarshaler.class) Set<String> declinedPermissions, String appID, String userID, NSDate expirationDate, NSDate refreshDate) { super((SkipInit) null); initObject(init(tokenString, permissions, declinedPermissions, appID, userID, expirationDate, refreshDate)); }
-    @Method(selector = "initWithTokenString:permissions:declinedPermissions:appID:userID:expirationDate:refreshDate:dataAccessExpirationDate:")
-    public FBSDKAccessToken(String tokenString, NSArray<?> permissions, NSArray<?> declinedPermissions, String appID, String userID, NSDate expirationDate, NSDate refreshDate, NSDate dataAccessExpirationDate) { super((SkipInit) null); initObject(init(tokenString, permissions, declinedPermissions, appID, userID, expirationDate, refreshDate, dataAccessExpirationDate)); }
+    @Method(selector = "initWithTokenString:permissions:declinedPermissions:expiredPermissions:appID:userID:expirationDate:refreshDate:dataAccessExpirationDate:")
+    public FBSDKAccessToken(String tokenString, NSArray<NSString> permissions, NSArray<NSString> declinedPermissions, NSArray<NSString> expiredPermissions, String appID, String userID, NSDate expirationDate, NSDate refreshDate, NSDate dataAccessExpirationDate) { super((SkipInit) null); initObject(init(tokenString, permissions, declinedPermissions, expiredPermissions, appID, userID, expirationDate, refreshDate, dataAccessExpirationDate)); }
     @Method(selector = "initWithCoder:")
     public FBSDKAccessToken(NSCoder decoder) { super((SkipInit) null); initObject(init(decoder)); }
     /*</constructors>*/
     /*<properties>*/
+    @Property(selector = "currentAccessToken")
+    public static native FBSDKAccessToken getCurrentAccessToken();
+    @Property(selector = "setCurrentAccessToken:")
+    public static native void setCurrentAccessToken(FBSDKAccessToken v);
+    @Property(selector = "isCurrentAccessTokenActive")
+    public static native boolean isCurrentAccessTokenIsActive();
     @Property(selector = "appID")
     public native String getAppID();
     @Property(selector = "dataAccessExpirationDate")
     public native NSDate getDataAccessExpirationDate();
     @Property(selector = "declinedPermissions")
     public native @org.robovm.rt.bro.annotation.Marshaler(NSSet.AsStringSetMarshaler.class) Set<String> getDeclinedPermissions();
+    @Property(selector = "expiredPermissions")
+    public native NSSet<NSString> getExpiredPermissions();
     @Property(selector = "expirationDate")
     public native NSDate getExpirationDate();
     @Property(selector = "permissions")
@@ -86,20 +92,12 @@ import org.robovm.pods.bolts.*;
     @GlobalValue(symbol="FBSDKAccessTokenDidChangeNotification", optional=true)
     public static native NSString DidChangeNotification();
     
-    @Method(selector = "initWithTokenString:permissions:declinedPermissions:appID:userID:expirationDate:refreshDate:")
-    protected native @Pointer long init(String tokenString, @org.robovm.rt.bro.annotation.Marshaler(NSSet.AsStringSetMarshaler.class) Set<String> permissions, @org.robovm.rt.bro.annotation.Marshaler(NSSet.AsStringSetMarshaler.class) Set<String> declinedPermissions, String appID, String userID, NSDate expirationDate, NSDate refreshDate);
-    @Method(selector = "initWithTokenString:permissions:declinedPermissions:appID:userID:expirationDate:refreshDate:dataAccessExpirationDate:")
-    protected native @Pointer long init(String tokenString, NSArray<?> permissions, NSArray<?> declinedPermissions, String appID, String userID, NSDate expirationDate, NSDate refreshDate, NSDate dataAccessExpirationDate);
+    @Method(selector = "initWithTokenString:permissions:declinedPermissions:expiredPermissions:appID:userID:expirationDate:refreshDate:dataAccessExpirationDate:")
+    protected native @Pointer long init(String tokenString, NSArray<NSString> permissions, NSArray<NSString> declinedPermissions, NSArray<NSString> expiredPermissions, String appID, String userID, NSDate expirationDate, NSDate refreshDate, NSDate dataAccessExpirationDate);
     @Method(selector = "hasGranted:")
     public native boolean hasGranted(String permission);
     @Method(selector = "isEqualToAccessToken:")
     public native boolean equalsTo(FBSDKAccessToken token);
-    @Method(selector = "currentAccessToken")
-    public static native FBSDKAccessToken getCurrentAccessToken();
-    @Method(selector = "currentAccessTokenIsActive")
-    public static native boolean currentAccessTokenIsActive();
-    @Method(selector = "setCurrentAccessToken:")
-    public static native void setCurrentAccessToken(FBSDKAccessToken token);
     @Method(selector = "refreshCurrentAccessToken:")
     public static native void refreshCurrentAccessToken(@Block VoidBlock3<FBSDKGraphRequestConnection, NSObject, NSError> completionHandler);
     @Method(selector = "copy")

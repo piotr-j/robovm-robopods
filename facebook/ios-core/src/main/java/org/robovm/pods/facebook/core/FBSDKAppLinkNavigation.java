@@ -47,11 +47,15 @@ import org.robovm.pods.bolts.*;
     /*<bind>*/static { ObjCRuntime.bind(FBSDKAppLinkNavigation.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public FBSDKAppLinkNavigation() {}
+    protected FBSDKAppLinkNavigation() {}
     protected FBSDKAppLinkNavigation(Handle h, long handle) { super(h, handle); }
     protected FBSDKAppLinkNavigation(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
     /*<properties>*/
+    @Property(selector = "defaultResolver")
+    public static native FBSDKAppLinkResolving getDefaultResolver();
+    @Property(selector = "setDefaultResolver:")
+    public static native void setDefaultResolver(FBSDKAppLinkResolving v);
     @Property(selector = "extras")
     public native NSDictionary<NSString, ?> getExtras();
     @Property(selector = "appLinkData")
@@ -81,9 +85,5 @@ import org.robovm.pods.bolts.*;
     public static native void navigate(NSURL destination, @Block VoidBlock2<FBSDKAppLinkNavigationType, NSError> handler);
     @Method(selector = "navigateToURL:resolver:handler:")
     public static native void navigate(NSURL destination, FBSDKAppLinkResolving resolver, @Block VoidBlock2<FBSDKAppLinkNavigationType, NSError> handler);
-    @Method(selector = "defaultResolver")
-    public static native FBSDKAppLinkResolving defaultResolver();
-    @Method(selector = "setDefaultResolver:")
-    public static native void setDefaultResolver(FBSDKAppLinkResolving resolver);
     /*</methods>*/
 }

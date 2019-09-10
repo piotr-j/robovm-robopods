@@ -61,7 +61,7 @@ import org.robovm.pods.facebook.core.*;
     public native FBSDKLoginTooltipViewDelegate getDelegate();
     @Property(selector = "setDelegate:", strongRef = true)
     public native void setDelegate(FBSDKLoginTooltipViewDelegate v);
-    @Property(selector = "forceDisplay")
+    @Property(selector = "shouldForceDisplay")
     public native boolean forcesDisplay();
     @Property(selector = "setForceDisplay:")
     public native void setForceDisplay(boolean v);

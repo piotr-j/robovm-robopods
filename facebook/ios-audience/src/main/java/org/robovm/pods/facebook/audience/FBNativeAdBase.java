@@ -106,5 +106,7 @@ import org.robovm.apple.dispatch.*;
     public native void loadAd(String bidPayload);
     @Method(selector = "loadAdWithBidPayload:mediaCachePolicy:")
     public native void loadAd(String bidPayload, FBNativeAdsCachePolicy mediaCachePolicy);
+    @Method(selector = "nativeAdWithPlacementId:bidPayload:error:")
+    public static native FBNativeAdBase nativeAd(String placementId, String bidPayload, NSError.NSErrorPtr error);
     /*</methods>*/
 }

@@ -53,10 +53,6 @@ import org.robovm.pods.facebook.core.*;
     public FBSDKShareVideoContent(NSCoder decoder) { super((SkipInit) null); initObject(init(decoder)); }
     /*</constructors>*/
     /*<properties>*/
-    @Property(selector = "previewPhoto")
-    public native FBSDKSharePhoto getPreviewPhoto();
-    @Property(selector = "setPreviewPhoto:")
-    public native void setPreviewPhoto(FBSDKSharePhoto v);
     @Property(selector = "video")
     public native FBSDKShareVideo getVideo();
     @Property(selector = "setVideo:")
@@ -96,8 +92,6 @@ import org.robovm.pods.facebook.core.*;
     public native boolean equalsTo(FBSDKShareVideoContent content);
     @Method(selector = "addParameters:bridgeOptions:")
     public native NSDictionary<NSString, ?> addParameters(NSDictionary<NSString, ?> existingParameters, FBSDKShareBridgeOptions bridgeOptions);
-    @Method(selector = "addToParameters:bridgeOptions:")
-    public native void addToParameters(NSMutableDictionary<NSString, ?> parameters, FBSDKShareBridgeOptions bridgeOptions);
     @Method(selector = "validateWithOptions:error:")
     public native boolean validate(FBSDKShareBridgeOptions bridgeOptions, NSError.NSErrorPtr errorRef);
     @Method(selector = "encodeWithCoder:")

@@ -1,0 +1,44 @@
+package: org.robovm.pods.facebook.places
+framework: FBSDKPlacesKit
+include: [foundation, uikit, coregraphics, corelocation, accounts, ../../../../ios-core/src/main/bro-gen/facebook-corekit.yaml]
+clang_args: ['-x', 'objective-c']
+headers: [FBSDKPlacesKit.h]
+typedefs: {}
+enums:
+    FBSDKPlaceLocationConfidence: {}
+
+classes:
+    FBSDKPlacesManager:
+        methods:
+            '-generatePlaceSearchRequestForSearchTerm:categories:fields:distance:cursor:completion:':
+                name: generatePlaceSearchRequest
+            '-placeSearchRequestForLocation:searchTerm:categories:fields:distance:cursor:':
+                name: placeSearchRequest
+            '-generateCurrentPlaceRequestWithMinimumConfidenceLevel:fields:completion:':
+                name: generateCurrentPlaceRequest
+            '-generateCurrentPlaceRequestForCurrentLocation:withMinimumConfidenceLevel:fields:completion:':
+                name: generateCurrentPlaceRequest
+            '-currentPlaceFeedbackRequestForPlaceID:tracking:wasHere:':
+                name: currentPlaceFeedbackRequest
+            '-placeInfoRequestForPlaceID:fields:':
+                name: placeInfoRequest
+
+protocols: {}
+
+functions:
+    # Make sure we don't miss any functions if new ones are introduced in a later version
+    (k?FB.*):
+        class: FacebookPlaces
+        name: 'Function__#{g[0]}'
+
+values:
+    # Make sure we don't miss any values if new ones are introduced in a later version
+    (k?FB.*):
+        class: FacebookPlaces
+        name: 'Value__#{g[0]}'
+
+constants:
+    # Make sure we don't miss any constants if new ones are introduced in a later version
+    (k?FB.*):
+        class: FacebookPlaces
+        name: 'Constant__#{g[0]}'

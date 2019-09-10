@@ -50,16 +50,22 @@ import org.robovm.pods.bolts.*;
     protected FBSDKGraphRequest() {}
     protected FBSDKGraphRequest(Handle h, long handle) { super(h, handle); }
     protected FBSDKGraphRequest(SkipInit skipInit) { super(skipInit); }
+    @Method(selector = "initWithGraphPath:")
+    public FBSDKGraphRequest(String graphPath) { super((SkipInit) null); initObject(init(graphPath)); }
+    @Method(selector = "initWithGraphPath:HTTPMethod:")
+    public FBSDKGraphRequest(String graphPath, String method) { super((SkipInit) null); initObject(init(graphPath, method)); }
     @Method(selector = "initWithGraphPath:parameters:")
-    public FBSDKGraphRequest(String graphPath, NSDictionary<?, ?> parameters) { super((SkipInit) null); initObject(init(graphPath, parameters)); }
+    public FBSDKGraphRequest(String graphPath, NSDictionary<NSString, ?> parameters) { super((SkipInit) null); initObject(init(graphPath, parameters)); }
     @Method(selector = "initWithGraphPath:parameters:HTTPMethod:")
-    public FBSDKGraphRequest(String graphPath, NSDictionary<?, ?> parameters, String HTTPMethod) { super((SkipInit) null); initObject(init(graphPath, parameters, HTTPMethod)); }
+    public FBSDKGraphRequest(String graphPath, NSDictionary<NSString, ?> parameters, String method) { super((SkipInit) null); initObject(init(graphPath, parameters, method)); }
     @Method(selector = "initWithGraphPath:parameters:tokenString:version:HTTPMethod:")
-    public FBSDKGraphRequest(String graphPath, NSDictionary<?, ?> parameters, String tokenString, String version, String HTTPMethod) { super((SkipInit) null); initObject(init(graphPath, parameters, tokenString, version, HTTPMethod)); }
+    public FBSDKGraphRequest(String graphPath, NSDictionary<NSString, ?> parameters, String tokenString, String version, String method) { super((SkipInit) null); initObject(init(graphPath, parameters, tokenString, version, method)); }
     /*</constructors>*/
     /*<properties>*/
     @Property(selector = "parameters")
-    public native NSMutableDictionary<?, ?> getParameters();
+    public native NSDictionary<NSString, ?> getParameters();
+    @Property(selector = "setParameters:")
+    public native void setParameters(NSDictionary<NSString, ?> v);
     @Property(selector = "tokenString")
     public native String getTokenString();
     @Property(selector = "graphPath")
@@ -71,12 +77,16 @@ import org.robovm.pods.bolts.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    @Method(selector = "initWithGraphPath:")
+    protected native @Pointer long init(String graphPath);
+    @Method(selector = "initWithGraphPath:HTTPMethod:")
+    protected native @Pointer long init(String graphPath, String method);
     @Method(selector = "initWithGraphPath:parameters:")
-    protected native @Pointer long init(String graphPath, NSDictionary<?, ?> parameters);
+    protected native @Pointer long init(String graphPath, NSDictionary<NSString, ?> parameters);
     @Method(selector = "initWithGraphPath:parameters:HTTPMethod:")
-    protected native @Pointer long init(String graphPath, NSDictionary<?, ?> parameters, String HTTPMethod);
+    protected native @Pointer long init(String graphPath, NSDictionary<NSString, ?> parameters, String method);
     @Method(selector = "initWithGraphPath:parameters:tokenString:version:HTTPMethod:")
-    protected native @Pointer long init(String graphPath, NSDictionary<?, ?> parameters, String tokenString, String version, String HTTPMethod);
+    protected native @Pointer long init(String graphPath, NSDictionary<NSString, ?> parameters, String tokenString, String version, String method);
     @Method(selector = "setGraphErrorRecoveryDisabled:")
     public native void setGraphErrorRecoveryDisabled(boolean disable);
     @Method(selector = "startWithCompletionHandler:")

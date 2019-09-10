@@ -46,9 +46,11 @@ import org.robovm.pods.facebook.core.*;
     /*<bind>*/static { ObjCRuntime.bind(FBSDKShareOpenGraphAction.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public FBSDKShareOpenGraphAction() {}
+    protected FBSDKShareOpenGraphAction() {}
     protected FBSDKShareOpenGraphAction(Handle h, long handle) { super(h, handle); }
     protected FBSDKShareOpenGraphAction(SkipInit skipInit) { super(skipInit); }
+    @Method(selector = "initWithActionType:")
+    public FBSDKShareOpenGraphAction(String actionType) { super((SkipInit) null); initObject(init(actionType)); }
     public FBSDKShareOpenGraphAction(String actionType, FBSDKShareOpenGraphObject object, String key) { super((Handle) null, create(actionType, object, key)); retain(getHandle()); }
     public FBSDKShareOpenGraphAction(String actionType, String objectID, String key) { super((Handle) null, create(actionType, objectID, key)); retain(getHandle()); }
     public FBSDKShareOpenGraphAction(String actionType, NSURL objectURL, String key) { super((Handle) null, create(actionType, objectURL, key)); retain(getHandle()); }
@@ -61,6 +63,8 @@ import org.robovm.pods.facebook.core.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    @Method(selector = "initWithActionType:")
+    protected native @Pointer long init(String actionType);
     @Method(selector = "isEqualToShareOpenGraphAction:")
     public native boolean equalsTo(FBSDKShareOpenGraphAction action);
     @Method(selector = "actionWithType:object:key:")

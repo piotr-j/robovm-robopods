@@ -68,6 +68,8 @@ import org.robovm.pods.facebook.core.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    @Method(selector = "dialogWithContent:delegate:")
+    public static native FBSDKMessageDialog dialogWithContent$delegate$(FBSDKSharingContent content, FBSDKSharingDelegate delegate);
     @Method(selector = "showWithContent:delegate:")
     private static native FBSDKMessageDialog show0(FBSDKSharingContent content, FBSDKSharingDelegate delegate);
     @Method(selector = "show")

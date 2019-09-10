@@ -42,8 +42,7 @@ import org.robovm.pods.bolts.*;
 public enum /*<name>*/FBSDKIncludeStatusBarInSize/*</name>*/ implements ValuedEnum {
     /*<values>*/
     Never(0L),
-    IOS7AndLater(1L),
-    Always(2L);
+    Always(1L);
     /*</values>*/
 
     /*<bind>*/

@@ -45,7 +45,7 @@ import org.robovm.apple.dispatch.*;
     /*</ptr>*/
     /*<bind>*/static { Bro.bind(FacebookAudienceNetwork.class); }/*</bind>*/
     /*<constants>*/
-    public static final String Constant__FB_AD_SDK_VERSION = "5.1.0";
+    public static final String Constant__FB_AD_SDK_VERSION = "5.5.0";
     /*</constants>*/
     /*<constructors>*//*</constructors>*/
     /*<properties>*//*</properties>*/

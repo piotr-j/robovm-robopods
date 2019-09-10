@@ -72,7 +72,7 @@ import org.robovm.pods.bolts.*;
     public native FBSDKIncludeStatusBarInSize getIncludeStatusBarInSize();
     @Property(selector = "setIncludeStatusBarInSize:")
     public native void setIncludeStatusBarInSize(FBSDKIncludeStatusBarInSize v);
-    @Property(selector = "closed")
+    @Property(selector = "isClosed")
     public native boolean isClosed();
     @Property(selector = "setClosed:")
     public native void setClosed(boolean v);

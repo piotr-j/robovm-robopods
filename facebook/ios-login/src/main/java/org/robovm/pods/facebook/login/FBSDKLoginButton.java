@@ -59,18 +59,22 @@ import org.robovm.pods.facebook.core.*;
     public native FBSDKLoginButtonDelegate getDelegate();
     @Property(selector = "setDelegate:", strongRef = true)
     public native void setDelegate(FBSDKLoginButtonDelegate v);
+    /**
+     * @deprecated All login flows utilize the browser. This will be removed in the next major release
+     */
+    @Deprecated
     @Property(selector = "loginBehavior")
     public native FBSDKLoginBehavior getLoginBehavior();
+    /**
+     * @deprecated All login flows utilize the browser. This will be removed in the next major release
+     */
+    @Deprecated
     @Property(selector = "setLoginBehavior:")
     public native void setLoginBehavior(FBSDKLoginBehavior v);
-    @Property(selector = "publishPermissions")
-    public native @org.robovm.rt.bro.annotation.Marshaler(NSArray.AsStringListMarshaler.class) List<String> getPublishPermissions();
-    @Property(selector = "setPublishPermissions:")
-    public native void setPublishPermissions(@org.robovm.rt.bro.annotation.Marshaler(NSArray.AsStringListMarshaler.class) List<String> v);
-    @Property(selector = "readPermissions")
-    public native @org.robovm.rt.bro.annotation.Marshaler(NSArray.AsStringListMarshaler.class) List<String> getReadPermissions();
-    @Property(selector = "setReadPermissions:")
-    public native void setReadPermissions(@org.robovm.rt.bro.annotation.Marshaler(NSArray.AsStringListMarshaler.class) List<String> v);
+    @Property(selector = "permissions")
+    public native NSArray<NSString> getPermissions();
+    @Property(selector = "setPermissions:")
+    public native void setPermissions(NSArray<NSString> v);
     @Property(selector = "tooltipBehavior")
     public native FBSDKLoginButtonTooltipBehavior getTooltipBehavior();
     @Property(selector = "setTooltipBehavior:")

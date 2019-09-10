@@ -36,44 +36,21 @@ import org.robovm.pods.bolts.*;
 /*</imports>*/
 
 /*<javadoc>*/
-
 /*</javadoc>*/
-/*<annotations>*/@Marshaler(ValuedEnum.AsMachineSizedSIntMarshaler.class) @Library(Library.INTERNAL)/*</annotations>*/
-public enum /*<name>*/FBSDKError/*</name>*/ implements ValuedEnum {
-    /*<values>*/
-    Reserved(0L),
-    Encryption(1L),
-    InvalidArgument(2L),
-    Unknown(3L),
-    Network(4L),
-    AppEventsFlush(5L),
-    GraphRequestNonTextMimeTypeReturned(6L),
-    GraphRequestProtocolMismatch(7L),
-    GraphRequestGraphAPI(8L),
-    DialogUnavailable(9L),
-    AccessTokenRequired(10L),
-    AppVersionUnsupported(11L),
-    BrowserUnavailable(12L);
-    /*</values>*/
+/*<annotations>*/@Library(Library.INTERNAL)/*</annotations>*/
+/*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKError/*</name>*/ 
+    extends /*<extends>*/CocoaUtility/*</extends>*/ 
+    /*<implements>*//*</implements>*/ {
 
+    /*<ptr>*/
+    /*</ptr>*/
     /*<bind>*/static { Bro.bind(FBSDKError.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
+    /*<constructors>*//*</constructors>*/
+    /*<properties>*//*</properties>*/
+    /*<members>*//*</members>*/
     /*<methods>*/
     @GlobalValue(symbol="FBSDKErrorDomain", optional=true)
     public static native String getClassDomain();
     /*</methods>*/
-
-    private final long n;
-
-    private /*<name>*/FBSDKError/*</name>*/(long n) { this.n = n; }
-    public long value() { return n; }
-    public static /*<name>*/FBSDKError/*</name>*/ valueOf(long n) {
-        for (/*<name>*/FBSDKError/*</name>*/ v : values()) {
-            if (v.n == n) {
-                return v;
-            }
-        }
-        throw new IllegalArgumentException("No constant with value " + n + " found in " 
-            + /*<name>*/FBSDKError/*</name>*/.class.getName());
-    }
 }

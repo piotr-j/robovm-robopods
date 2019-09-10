@@ -53,6 +53,12 @@ import org.robovm.pods.facebook.core.*;
     public FBSDKShareOpenGraphValueContainer(NSCoder decoder) { super((SkipInit) null); initObject(init(decoder)); }
     /*</constructors>*/
     /*<properties>*/
+    @Property(selector = "allProperties")
+    public native NSDictionary<NSString, ?> getAllProperties();
+    @Property(selector = "keyEnumerator")
+    public native NSEnumerator<?> getKeyEnumerator();
+    @Property(selector = "objectEnumerator")
+    public native NSEnumerator<?> getObjectEnumerator();
     @Property(selector = "supportsSecureCoding")
     public static native boolean supportsSecureCoding();
     /*</properties>*/
@@ -62,26 +68,22 @@ import org.robovm.pods.facebook.core.*;
     public native NSArray<?> getArray(String key);
     @Method(selector = "enumerateKeysAndObjectsUsingBlock:")
     public native void enumerateKeysAndObjects(@Block VoidBlock3<NSString, NSObject, BooleanPtr> block);
-    @Method(selector = "keyEnumerator")
-    public native NSEnumerator<NSString> getKeyEnumerator();
     @Method(selector = "numberForKey:")
     public native NSNumber getNumber(String key);
-    @Method(selector = "objectEnumerator")
-    public native NSEnumerator<?> getObjectEnumerator();
+    @Method(selector = "stringForKey:")
+    public native String getString(String key);
+    @Method(selector = "URLForKey:")
+    public native NSURL getURL(String key);
     @Method(selector = "objectForKey:")
     public native FBSDKShareOpenGraphObject getGraphObject(String key);
     @Method(selector = "objectForKeyedSubscript:")
     public native NSObject getObject(String key);
     @Method(selector = "parseProperties:")
-    public native void parseProperties(NSDictionary<?, ?> properties);
+    public native void parseProperties(NSDictionary<NSString, ?> properties);
     @Method(selector = "photoForKey:")
     public native FBSDKSharePhoto getPhoto(String key);
     @Method(selector = "removeObjectForKey:")
     public native void removeObject(String key);
-    @Method(selector = "stringForKey:")
-    public native String getString(String key);
-    @Method(selector = "URLForKey:")
-    public native NSURL getURL(String key);
     @Method(selector = "encodeWithCoder:")
     public native void encode(NSCoder coder);
     @Method(selector = "initWithCoder:")

@@ -41,13 +41,13 @@ import org.robovm.pods.bolts.*;
 /*<annotations>*/@Library(Library.INTERNAL) @NativeClass/*</annotations>*/
 /*<visibility>*/public/*</visibility>*/ class /*<name>*/FBSDKAppLinkResolver/*</name>*/ 
     extends /*<extends>*/NSObject/*</extends>*/ 
-    /*<implements>*/implements FBSDKAppLinkResolving, BFAppLinkResolving/*</implements>*/ {
+    /*<implements>*/implements FBSDKAppLinkResolving/*</implements>*/ {
 
     /*<ptr>*/public static class FBSDKAppLinkResolverPtr extends Ptr<FBSDKAppLinkResolver, FBSDKAppLinkResolverPtr> {}/*</ptr>*/
     /*<bind>*/static { ObjCRuntime.bind(FBSDKAppLinkResolver.class); }/*</bind>*/
     /*<constants>*//*</constants>*/
     /*<constructors>*/
-    public FBSDKAppLinkResolver() {}
+    protected FBSDKAppLinkResolver() {}
     protected FBSDKAppLinkResolver(Handle h, long handle) { super(h, handle); }
     protected FBSDKAppLinkResolver(SkipInit skipInit) { super(skipInit); }
     /*</constructors>*/
@@ -56,10 +56,6 @@ import org.robovm.pods.bolts.*;
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
-    @Method(selector = "appLinksFromURLsInBackground:")
-    public native BFTask<NSArray<BFAppLink>> getAppLinksFromURLsInBackground(NSArray<NSURL> urls);
-    @Method(selector = "appLinkFromURLInBackground:")
-    public native BFTask<BFAppLink> getAppLinkFromURLInBackground(NSURL url);
     @Method(selector = "appLinksFromURLs:handler:")
     public native void getAppLinksFromURLs(NSArray<NSURL> urls, @Block VoidBlock2<NSDictionary<NSURL, FBSDKAppLink>, NSError> handler);
     @Method(selector = "appLinkFromURL:handler:")

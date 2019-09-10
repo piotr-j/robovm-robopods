@@ -48,6 +48,10 @@ import org.robovm.apple.dispatch.*;
     /*<constructors>*/
     protected FBAdExtraHint(Handle h, long handle) { super(h, handle); }
     protected FBAdExtraHint(SkipInit skipInit) { super(skipInit); }
+    /**
+     * @deprecated Keywords are no longer used in Audience Network
+     */
+    @Deprecated
     @Method(selector = "initWithKeywords:")
     public FBAdExtraHint(NSArray<NSString> keywords) { super((SkipInit) null); initObject(init(keywords)); }
     /*</constructors>*/
@@ -60,13 +64,29 @@ import org.robovm.apple.dispatch.*;
     public native String getExtraData();
     @Property(selector = "setExtraData:")
     public native void setExtraData(String v);
+    @Property(selector = "mediationData")
+    public native String getMediationData();
+    @Property(selector = "setMediationData:")
+    public native void setMediationData(String v);
     /*</properties>*/
     /*<members>*//*</members>*/
     /*<methods>*/
+    /**
+     * @deprecated Keywords are no longer used in Audience Network
+     */
+    @Deprecated
     @Method(selector = "initWithKeywords:")
     protected native @Pointer long init(NSArray<NSString> keywords);
+    /**
+     * @deprecated Keywords are no longer used in Audience Network
+     */
+    @Deprecated
     @Method(selector = "addKeyword:")
     public native void addKeyword(String keyword);
+    /**
+     * @deprecated Keywords are no longer used in Audience Network
+     */
+    @Deprecated
     @Method(selector = "removeKeyword:")
     public native void removeKeyword(String keyword);
     /*</methods>*/

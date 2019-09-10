@@ -56,6 +56,10 @@ import org.robovm.pods.bolts.*;
     public FBSDKProfile(NSCoder decoder) { super((SkipInit) null); initObject(init(decoder)); }
     /*</constructors>*/
     /*<properties>*/
+    @Property(selector = "currentProfile")
+    public static native FBSDKProfile getCurrentProfile();
+    @Property(selector = "setCurrentProfile:")
+    public static native void setCurrentProfile(FBSDKProfile v);
     @Property(selector = "userID")
     public native String getUserID();
     @Property(selector = "firstName")
@@ -82,14 +86,8 @@ import org.robovm.pods.bolts.*;
     protected native @Pointer long init(String userID, String firstName, String middleName, String lastName, String name, NSURL linkURL, NSDate refreshDate);
     @Method(selector = "imageURLForPictureMode:size:")
     public native NSURL getImageURL(FBSDKProfilePictureMode mode, @ByVal CGSize size);
-    @Method(selector = "imagePathForPictureMode:size:")
-    public native String getImagePath(FBSDKProfilePictureMode mode, @ByVal CGSize size);
     @Method(selector = "isEqualToProfile:")
     public native boolean equalsTo(FBSDKProfile profile);
-    @Method(selector = "currentProfile")
-    public static native FBSDKProfile getCurrentProfile();
-    @Method(selector = "setCurrentProfile:")
-    public static native void setCurrentProfile(FBSDKProfile profile);
     @Method(selector = "enableUpdatesOnAccessTokenChange:")
     public static native void enableUpdatesOnAccessTokenChange(boolean enable);
     @Method(selector = "loadCurrentProfileWithCompletion:")

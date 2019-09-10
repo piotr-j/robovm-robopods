@@ -53,7 +53,7 @@ import org.robovm.pods.facebook.core.*;
     /*<members>*//*</members>*/
     /*<methods>*/
     @NotImplemented("gameRequestDialog:didCompleteWithResults:")
-    public void didComplete(FBSDKGameRequestDialog gameRequestDialog, NSDictionary<?, ?> results) {}
+    public void didComplete(FBSDKGameRequestDialog gameRequestDialog, NSDictionary<NSString, ?> results) {}
     @NotImplemented("gameRequestDialog:didFailWithError:")
     public void didFail(FBSDKGameRequestDialog gameRequestDialog, NSError error) {}
     @NotImplemented("gameRequestDialogDidCancel:")
