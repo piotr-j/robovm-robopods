@@ -79,7 +79,7 @@ import org.robovm.pods.facebook.core.*;
     @Method(selector = "validateWithError:")
     private native boolean validate(NSError.NSErrorPtr errorRef);
     @Method(selector = "dialogWithContent:delegate:")
-    public static native FBSDKGameRequestDialog dialogWithContent$delegate$(FBSDKGameRequestContent content, FBSDKGameRequestDialogDelegate delegate);
+    public static native FBSDKGameRequestDialog show(FBSDKGameRequestContent content, FBSDKGameRequestDialogDelegate delegate);
     @Method(selector = "showWithContent:delegate:")
     private static native FBSDKGameRequestDialog show0(FBSDKGameRequestContent content, FBSDKGameRequestDialogDelegate delegate);
     /*</methods>*/

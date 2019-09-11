@@ -67,8 +67,7 @@ classes:
                 name: show0
                 visibility: private
             '+dialogWithContent:delegate:':
-                #trim_after_first_colon: true
-                name: dialogWithContent$delegate$
+                name: show
     FBSDKHashtag: # DONE
         methods:
             '-isEqualToHashtag:':
